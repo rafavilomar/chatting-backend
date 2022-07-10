@@ -1,6 +1,6 @@
 import { config } from "dotenv";
-config();
 
+config();
 const envConfig = {
   api: {
     port: process.env.API_PORT,

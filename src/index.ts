@@ -8,5 +8,6 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.listen(envConfig.api.port, () => {
+  // eslint-disable-next-line no-console
   console.info(`Started :) | Listening on: ${envConfig.api.port}`);
 });
