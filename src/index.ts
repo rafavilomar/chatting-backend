@@ -1,13 +1,16 @@
-import express, { Express, Request, Response } from "express";
-import envConfig from "./envConfig";
+import express, { Express } from "express";
+import { Server as WebSocketServer } from "socket.io";
+import http from "http";
+
+import envConfig from "./utils/envConfig";
+import socketConfig from "./utils/socketConfig";
 
 const app: Express = express();
+const server = http.createServer(app);
+const io = new WebSocketServer(server, { cors: { origin: "*" } });
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("Hi! :)");
-});
-
-app.listen(envConfig.api.port, () => {
+socketConfig(io);
+server.listen(envConfig.api.port, () => {
   // eslint-disable-next-line no-console
   console.info(`Started :) | Listening on: ${envConfig.api.port}`);
 });
