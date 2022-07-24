@@ -7,6 +7,9 @@ on:
   push:
     branches: ["main"]
 
+env:
+  PORT: ${{secrets.PORT}}
+  
 jobs:
   build:
     runs-on: ubuntu-20.04

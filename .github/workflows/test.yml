@@ -8,7 +8,7 @@ on:
     types: [opened]
 
 env:
-  API_PORT: ${{secrets.API_PORT}}
+  PORT: ${{secrets.PORT}}
   CLIENT_DOMAIN: ${{secrets.CLIENT_DOMAIN}}
 
 jobs:
