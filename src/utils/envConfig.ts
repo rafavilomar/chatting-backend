@@ -6,7 +6,7 @@ import { config } from "dotenv";
 config();
 const envConfig: any = {
   api: {
-    port: process.env.API_PORT,
+    port: process.env.PORT,
   },
   client: {
     domain: process.env.CLIENT_DOMAIN,
