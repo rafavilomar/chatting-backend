@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Updating Ubuntu system and Heroku
-        run: sudo apt update && sudo apt install heroku
+        run: sudo apt-get update && sudo apt-get install heroku
       - name: Login to Heroku Container registry
         run: heroku container:login
       - name: Build and push
