@@ -9,6 +9,7 @@ on:
 
 env:
   PORT: ${{secrets.PORT}}
+  CLIENT_DOMAIN: ${{secrets.CLIENT_DOMAIN}}
   
 jobs:
   build:
@@ -35,6 +36,8 @@ jobs:
           npm ci 
           npm run build 
       - name: Deploying...
-        run: |
-          npm ci 
-          npm run deploy 
+        uses: akhileshns/heroku-deploy@v3.12.12
+          with:
+            heroku_api_key:  ${{secrets.HEROKU_API_KEY}}
+            heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
+            heroku_email: ${{secrets.HEROKU_EMAIL}}
