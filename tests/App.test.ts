@@ -20,5 +20,5 @@ describe("Sum function", () => {
   test("Should respond 3", () => {
     const result = sum(1, 2);
     expect(result).toBe(3);
-  });
+  }); 
 });
