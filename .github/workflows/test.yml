@@ -1,0 +1,28 @@
+name: Test
+
+on:
+  push:
+    branches: ["main", "develop"]
+
+  pull_request:
+    types: [opened]
+
+env:
+  API_PORT: ${{secrets.API_PORT}}
+  CLIENT_DOMAIN: ${{secrets.CLIENT_DOMAIN}}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - name: Testing...
+        run: |
+          npm ci 
+          npm run test 
