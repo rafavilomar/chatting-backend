@@ -8,8 +8,8 @@ on:
     types: [opened]
 
 env:
-  API_PORT: 3500
-  CLIENT_DOMAIN: http://localhost:3000/
+  API_PORT: ${{secrets.API_PORT}}
+  CLIENT_DOMAIN: ${{secrets.CLIENT_DOMAIN}}
 
 jobs:
   test:
@@ -22,6 +22,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - run: npm ci
-      - run: npm run test
-      - run: echo 'Finished :)'
+      - name: Testing...
+        run: npm ci
+        run: npm run test
