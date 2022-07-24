@@ -2,7 +2,7 @@ name: Test
 
 on:
   push:
-    branches: ["main", "develop"]
+    branches: ["develop"]
 
   pull_request:
     types: [opened]
@@ -25,4 +25,8 @@ jobs:
       - name: Testing...
         run: |
           npm ci 
-          npm run test 
+          npm run test
+      - name: Building...
+        run: |
+          npm ci 
+          npm run build
