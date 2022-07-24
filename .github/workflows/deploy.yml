@@ -11,10 +11,12 @@ env:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
       - uses: actions/checkout@v3
+      - name: Updating Ubuntu system and Heroku
+        run: sudo apt update && sudo apt install heroku
       - name: Login to Heroku Container registry
         run: heroku container:login
       - name: Build and push
