@@ -7,13 +7,13 @@ const userList: User[] = [];
 export default (io: Server) => {
   io.on("connection", (socket: any) => {
     socket.on("login", (newUser: User) => {
+      // eslint-disable-next-line no-param-reassign
+      socket.user = newUser;
       if (
         userList.findIndex((user) =>
           user.username.startsWith(newUser.username)
         ) === -1
       ) {
-        // eslint-disable-next-line no-param-reassign
-        socket.user = newUser;
         userList.push(newUser);
         io.sockets.emit("user-list-active", userList);
       }
