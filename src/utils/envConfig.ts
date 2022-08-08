@@ -11,6 +11,9 @@ const envConfig: any = {
   client: {
     domain: process.env.CLIENT_DOMAIN,
   },
+  db: {
+    host: process.env.DB_HOST,
+  }
 };
 
 export const validateEnvVariables = () => {
