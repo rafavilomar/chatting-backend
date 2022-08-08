@@ -1,12 +1,12 @@
 import { Server } from "socket.io";
-import Message from "../models/Message";
-import User from "../models/User";
+import MessageDTO from "../DTOs/MessageDTO";
+import UserDTO from "../DTOs/UserDTO";
 
-const userList: User[] = [];
+const userList: UserDTO[] = [];
 
 export default (io: Server) => {
   io.on("connection", (socket: any) => {
-    socket.on("login", (newUser: User) => {
+    socket.on("login", (newUser: UserDTO) => {
       // eslint-disable-next-line no-param-reassign
       socket.user = newUser;
       if (
@@ -29,7 +29,7 @@ export default (io: Server) => {
     });
 
     socket.on("send-message", (message: string) => {
-      const newMessage: Message = {
+      const newMessage: MessageDTO = {
         date: new Date(),
         user: socket.user,
         message,
