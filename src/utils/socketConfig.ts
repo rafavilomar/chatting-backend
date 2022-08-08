@@ -30,7 +30,6 @@ export default (io: Server) => {
 
     socket.on("send-message", (message: string) => {
       const newMessage: MessageDTO = {
-        date: new Date(),
         user: socket.user,
         message,
       };
