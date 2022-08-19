@@ -20,7 +20,7 @@ export default (io: Server) => {
       const userFromDB = await findByUsername(newUser.username);
       if (
         userList.findIndex((user) =>
-          user.username.startsWith(newUser.username)
+          user?.username.startsWith(newUser?.username)
         ) === -1 && userFromDB &&
         userFromDB.password === newUser.password
       ) {
@@ -34,7 +34,7 @@ export default (io: Server) => {
 
     socket.on("logout", () => {
       const index = userList.findIndex((user) =>
-        user.username.startsWith(socket.user.username)
+        user?.username.startsWith(socket?.user?.username)
       );
 
       userList.splice(index, 1);
