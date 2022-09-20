@@ -5,6 +5,7 @@
 - [About](#about)
 - [Running the Project](#running-the-project)
 - [Author](#author)
+- [Soon](#soon)
 
 ## Technologies
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=TypeScript&logoColor=ffffff)
@@ -55,5 +56,9 @@ $ npm start
 - Author: Rafael Vilomar
 - LinkedIn: https://www.linkedin.com/in/rafavilomar/
 - Email: rafavilomar@gmail.com
+
+### Soon
+- Docker implementation
+- Secret messages
 
 
