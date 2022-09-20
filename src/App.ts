@@ -1,6 +1,6 @@
-import express, { Express, Request, Response } from "express";
+import express, { Express } from "express";
 
 const app: Express = express();
-app.get("/task", (req: Request, res: Response) => res.send("working..."));
+app.use(express.json());
 
 export default app;
