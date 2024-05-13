@@ -13,6 +13,9 @@ const envConfig = {
     client: {
         domain: process.env.CLIENT_DOMAIN,
     },
+    db: {
+        host: process.env.DB_HOST,
+    }
 };
 const validateEnvVariables = () => {
     let warning = false;

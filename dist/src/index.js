@@ -31,8 +31,10 @@ const http_1 = __importDefault(require("http"));
 const App_1 = __importDefault(require("./App"));
 const envConfig_1 = __importStar(require("./utils/envConfig"));
 const socketConfig_1 = __importDefault(require("./utils/socketConfig"));
+const mongoConnection_1 = __importDefault(require("./utils/mongoConnection"));
 const server = http_1.default.createServer(App_1.default);
 const io = new socket_io_1.Server(server, { cors: { origin: "*" } });
+(0, mongoConnection_1.default)();
 (0, socketConfig_1.default)(io);
 server.listen(envConfig_1.default.api.port, () => {
     (0, envConfig_1.validateEnvVariables)();
