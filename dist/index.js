@@ -39,6 +39,6 @@ const io = new socket_io_1.Server(server, { cors: { origin: "*" } });
 server.listen(envConfig_1.default.api.port, () => {
     (0, envConfig_1.validateEnvVariables)();
     // eslint-disable-next-line no-console
-    console.info(`Started :) | Listening on: ${envConfig_1.default.api.port}`);
+    console.info(`Listening on: ${envConfig_1.default.api.port}`);
 });
 exports.default = server;
