@@ -3,7 +3,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const app = (0, express_1.default)();
-app.use(express_1.default.json());
-exports.default = app;
+const mongoose_1 = __importDefault(require("mongoose"));
+const MessageSchema = new mongoose_1.default.Schema({
+    message: String,
+    username: String
+}, { timestamps: true });
+exports.default = MessageSchema;
