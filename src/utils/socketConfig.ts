@@ -43,7 +43,7 @@ export default (io: Server) => {
 
     socket.on("send-message", async (message: string) => {
       const newMessage: MessageDTO = {
-        user: socket.user,
+        username: socket.user.username,
         message,
       };
       await saveMessage(newMessage);
