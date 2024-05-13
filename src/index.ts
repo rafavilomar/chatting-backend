@@ -14,7 +14,7 @@ socketConfig(io);
 server.listen(envConfig.api.port, () => {
   validateEnvVariables();
   // eslint-disable-next-line no-console
-  console.info(`Started :) | Listening on: ${envConfig.api.port}`);
+  console.info(`Listening on: ${envConfig.api.port}`);
 });
 
 export default server;
